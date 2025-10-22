@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, output } from '@angular/core';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -9,8 +9,9 @@ import { UserService } from '../services/user.service';
 })
 export class Header {
   userService = inject(UserService);
+  toggle = output<void>();
 
   toggleMenu() {
-    // Logic to open/close the side navigation will go here
+    this.toggle.emit();
   }
 }

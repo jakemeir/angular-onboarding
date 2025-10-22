@@ -5,14 +5,15 @@
   padding: 10px 20px;
   background-color: #f8f9fa;
   border-bottom: 1px solid #dee2e6;
-  border-radius: 10px;
+  border-radius: 50px;
 }
 
 .hamburger-menu {
-  font-size: 24px;
+  font-size: 50px;
   background: none;
   border: none;
   cursor: pointer;
+  padding-left: 50px;
 }
 
 .title {
@@ -31,5 +32,5 @@
 }
 
 .username {
-  font-size: 16px;
+  font-size: 20px;
 }

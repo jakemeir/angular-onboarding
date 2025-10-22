@@ -3,6 +3,10 @@
   flex: 1;
 }
 
+app-header {
+  margin-bottom: 10px;
+}
+
 app-menu {
   width: 200px;
   flex-shrink: 0;
@@ -10,10 +14,14 @@ app-menu {
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
   height: 100%;
+  border-radius: 50px;
 }
 
-.content-area {
+app-main-page {
   flex-grow: 1;
-  padding: 20px;
   overflow-y: auto;
+}
+
+.menu-open {
+  margin-left: 10px;
 }

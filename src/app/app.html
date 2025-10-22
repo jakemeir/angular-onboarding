@@ -1,7 +1,5 @@
-<app-header />
+<app-header (toggle)="toggleMenu()" />
 <div class="main-layout">
-  <app-menu />
-  <div class="content-area">
-    <app-main-page />
-  </div>
+  <app-menu *ngIf="isMenu" />
+  <app-main-page [class.menu-open]="isMenu"></app-main-page>
 </div>
