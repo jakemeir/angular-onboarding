@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { AsyncPipe, DatePipe } from '@angular/common';
+import { DateTimeService } from '../services/date-time.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-menu',
-  imports: [],
+  imports: [DatePipe, AsyncPipe],
   templateUrl: './menu.html',
-  styleUrl: './menu.css'
+  styleUrl: './menu.css',
 })
 export class Menu {
-
+  dateTimeService = inject(DateTimeService);
 }
