@@ -2,7 +2,7 @@ import { Component, inject, output } from '@angular/core';
 import { UserService } from '../services/user.service';
 
 @Component({
-  selector: 'app-header',
+  selector: 'header[app-header]',
   imports: [],
   templateUrl: './header.html',
   styleUrl: './header.css',

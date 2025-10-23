@@ -1,15 +1,13 @@
-.menu {
+:host {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px 20px 10px 20px;
-  background-color: #f8f9fa;
   height: 100%;
   box-sizing: border-box;
-  border-radius: 50px;
 }
 
-.menu ul {
+:host ul {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -18,16 +16,16 @@
   width: 100%;
 }
 
-.menu li {
+:host li {
   margin-bottom: 10px;
   margin-right: 0;
 }
 
-.menu li:last-child {
+:host li:last-child {
   margin-bottom: 0;
 }
 
-.menu button {
+:host button {
   font-size: 16px;
   background: none;
   border: none;
@@ -41,11 +39,11 @@
   justify-content: center;
 }
 
-.menu button:hover {
+:host button:hover {
   background-color: #e2e6ea;
 }
 
-.menu button .icon {
+:host button .icon {
   margin-right: 8px;
 }
 

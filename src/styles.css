@@ -10,3 +10,8 @@ app-root {
   flex-direction: column;
   height: 100%;
 }
+
+.rounded-container {
+  background-color: #f8f9fa;
+  border-radius: 50px;
+}
