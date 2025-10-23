@@ -1,0 +1,34 @@
+:host {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.hamburger-menu {
+  font-size: 50px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding-left: 50px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-icon {
+  font-size: 24px;
+  margin-right: 8px;
+}
+
+.username {
+  font-size: 20px;
+}

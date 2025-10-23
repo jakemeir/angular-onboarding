@@ -1,0 +1,26 @@
+.main-layout {
+  display: flex;
+  flex: 1;
+}
+
+header[app-header] {
+  margin-bottom: 10px;
+}
+
+nav[app-menu] {
+  width: 200px;
+  flex-shrink: 0;
+  border-right: 1px solid #dee2e6;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  height: 100%;
+}
+
+main[app-main-page] {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.menu-open {
+  margin-left: 10px;
+}

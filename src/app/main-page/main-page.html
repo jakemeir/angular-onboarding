@@ -1,0 +1,109 @@
+<h2
+  class="main-page-title"
+  appElementCallback
+  [callbacks]="
+    [
+      { style: 'fontSize', value: '40px', transition: '0.4s ease-in' },
+      { style: 'color', value: '#ff00ff' },
+      { style: 'transform', value: 'rotate(10deg) scale(1.2) translateX(10px)' },
+      { style: 'textShadow', value: '3px 3px 8px rgba(255,0,255,0.5)' },
+      { style: 'letterSpacing', value: '8px' },
+      { style: 'opacity', value: '0.7' },
+      { style: 'filter', value: 'hue-rotate(90deg)' },
+
+      { style: 'fontSize', value: '20px', transition: '0.4s ease-out' },
+      { style: 'color', value: '#00ffff' },
+      { style: 'transform', value: 'rotate(-10deg) scale(0.8) translateX(-10px)' },
+      { style: 'textShadow', value: 'none' },
+      { style: 'letterSpacing', value: 'normal' },
+      { style: 'opacity', value: '1' },
+      { style: 'filter', value: 'hue-rotate(0deg)' }
+    ] | styleAnimator
+  "
+  [time]="600"
+>
+  Welcome to our Angular Course...
+</h2>
+
+<p
+  class="animation-description"
+  appElementCallback
+  [callbacks]="
+    [
+      { style: 'color', value: '#6c757d' },
+      { style: 'opacity', value: '0.5' },
+      { style: 'transform', value: 'translateY(-10px) rotate(2deg)' },
+      { style: 'fontSize', value: '18px' },
+      { style: 'letterSpacing', value: '2px' },
+
+      { style: 'color', value: '#007bff' },
+      { style: 'opacity', value: '1' },
+      { style: 'transform', value: 'translateY(0px) rotate(0deg)' },
+      { style: 'fontSize', value: '16px' },
+      { style: 'letterSpacing', value: 'normal' }
+    ] | styleAnimator
+  "
+  [time]="400"
+>
+  This title is animated using a custom directive and a pipe. The pipe generates a series of callbacks that the directive then applies to the element.
+</p>
+
+<div
+  class="insane-shape"
+  appElementCallback
+  [callbacks]="
+    [
+      { style: 'backgroundColor', value: 'red' },
+      { style: 'transform', value: 'rotate(0deg) scale(1) translateX(0px) translateY(0px)' },
+      { style: 'borderRadius', value: '0%' },
+      { style: 'opacity', value: '1' },
+
+      { style: 'backgroundColor', value: 'blue' },
+      { style: 'transform', value: 'rotate(180deg) scale(1.5) translateX(50px) translateY(50px)' },
+      { style: 'borderRadius', value: '50%' },
+      { style: 'opacity', value: '0.5' },
+
+      { style: 'backgroundColor', value: 'green' },
+      { style: 'transform', value: 'rotate(360deg) scale(0.8) translateX(-50px) translateY(50px)' },
+      { style: 'borderRadius', value: '10%' },
+      { style: 'opacity', value: '1' },
+
+      { style: 'backgroundColor', value: 'purple' },
+      { style: 'transform', value: 'rotate(45deg) scale(1.2) translateX(20px) translateY(-50px)' },
+      { style: 'borderRadius', value: '30%' },
+      { style: 'opacity', value: '0.7' },
+
+      { style: 'backgroundColor', value: 'orange' },
+      { style: 'transform', value: 'rotate(-90deg) scale(0.7) translateX(-20px) translateY(-20px)' },
+      { style: 'borderRadius', value: '0%' },
+      { style: 'opacity', value: '1' }
+    ] | styleAnimator
+  "
+  [time]="150"
+></div>
+
+<div
+  class="bottom-text"
+  appElementCallback
+  [callbacks]="
+    [
+      { style: 'color', value: '#dc3545' },
+      { style: 'transform', value: 'scale(1) rotate(0deg)' },
+      { style: 'opacity', value: '1' },
+      { style: 'letterSpacing', value: 'normal' },
+
+      { style: 'color', value: '#007bff' },
+      { style: 'transform', value: 'scale(1.1) rotate(5deg)' },
+      { style: 'opacity', value: '0.8' },
+      { style: 'letterSpacing', value: '3px' },
+
+      { style: 'color', value: '#dc3545' },
+      { style: 'transform', value: 'scale(1) rotate(0deg)' },
+      { style: 'opacity', value: '1' },
+      { style: 'letterSpacing', value: 'normal' }
+    ] | styleAnimator
+  "
+  [time]="600"
+>
+  Proof that even simple Angular exercises can get a little... extra.
+</div>
