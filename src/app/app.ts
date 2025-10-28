@@ -1,13 +1,14 @@
-import { Component, input } from '@angular/core';
+import { Component } from '@angular/core';
 import { Header } from './header/header';
 import { Menu } from './menu/menu';
-import { MainPage } from './main-page/main-page';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
   styleUrl: './app.css',
-  imports: [Header, Menu, MainPage],
+  standalone: true,
+  imports: [Header, Menu, RouterModule],
 })
 export class App {
   isMenu: boolean = true;

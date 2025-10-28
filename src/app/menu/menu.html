@@ -1,11 +1,15 @@
-  <ul>
-    <li><button><span class="icon">🏠</span> Main</button></li>
-    <li><button><span class="icon">ℹ️</span> Info</button></li>
-    <li><button><span class="icon">❓</span> About</button></li>
-  </ul>
-  <div class="datetime">
+<ul>
+  <li>
+    <a routerLink=""><span class="icon">🏠</span> Main</a>
+  </li>
+  <li>
+    <a routerLink="/info"><span class="icon">ℹ️</span> Info</a>
+  </li>
+  <li>
+    <a routerLink="/about"><span class="icon">❓</span> About</a>
+  </li>
+</ul>
+<div class="datetime">
   <div class="date">{{ dateTimeService.currentTime | async | date : 'dd/MM/yy' }}</div>
   <div class="time">{{ dateTimeService.currentTime | async | date : 'HH:mm:ss' }}</div>
 </div>
-
-

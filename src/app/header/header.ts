@@ -3,6 +3,7 @@ import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'header[app-header]',
+  standalone: true,
   imports: [],
   templateUrl: './header.html',
   styleUrl: './header.css',
