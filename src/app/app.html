@@ -3,5 +3,7 @@
   @if (isMenu) {
   <nav app-menu class="rounded-container"></nav>
   }
-  <main app-main-page [class.menu-open]="isMenu" class="rounded-container"></main>
+  <main [class.menu-open]="isMenu" class="rounded-container">
+    <router-outlet></router-outlet>
+  </main>
 </div>
