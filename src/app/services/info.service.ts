@@ -16,9 +16,7 @@ export interface NetworkElement {
   last_seen: string;
 }
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class InfoService {
   private httpClient = inject(HttpClient);
   private errorService = inject(ErrorService);

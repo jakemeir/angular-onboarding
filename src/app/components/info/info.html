@@ -2,41 +2,39 @@
   <h2>Network Elements</h2>
 
   @if (networkElements().length > 0) {
-    <div class="table-responsive">
-      <table class="table table-striped table-bordered table-hover">
-        <thead class="thead-dark">
-          <tr>
-            <th>ID</th>
-            <th>Type</th>
-            <th>Hostname</th>
-            <th>IP Address</th>
-            <th>MAC Address</th>
-            <th>Manufacturer</th>
-            <th>Model</th>
-            <th>Status</th>
-            <th>Location</th>
-            <th>Last Seen</th>
-          </tr>
-        </thead>
-        <tbody>
-          @for (element of networkElements(); track element.id) {
-            <tr>
-              <td>{{ element.id }}</td>
-              <td>{{ element.type }}</td>
-              <td>{{ element.hostname }}</td>
-              <td>{{ element.ip_address }}</td>
-              <td>{{ element.mac_address }}</td>
-              <td>{{ element.manufacturer }}</td>
-              <td>{{ element.model }}</td>
-              <td>{{ element.status }}</td>
-              <td>{{ element.location }}</td>
-              <td>{{ element.last_seen | date:'short' }}</td>
-            </tr>
-          }
-        </tbody>
-      </table>
-    </div>
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Type</th>
+          <th>Hostname</th>
+          <th>IP Address</th>
+          <th>Manufacturer</th>
+          <th>Model</th>
+          <th>Status</th>
+          <th>Location</th>
+          <th>Last Seen</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (element of networkElements(); track element.id) {
+        <tr>
+          <td>{{ element.id }}</td>
+          <td>{{ element.type }}</td>
+          <td>{{ element.hostname }}</td>
+          <td>{{ element.ip_address }}</td>
+          <td>{{ element.manufacturer }}</td>
+          <td>{{ element.model }}</td>
+          <td>{{ element.status }}</td>
+          <td>{{ element.location }}</td>
+          <td>{{ element.last_seen | date : 'short' }}</td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
   } @else {
-    <p class="loading-message">Loading network elements or no elements to display...</p>
+  <p class="loading-message">Loading network elements or no elements to display...</p>
   }
 </div>

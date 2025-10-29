@@ -10,6 +10,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   templateUrl: './info.html',
   styleUrl: './info.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [InfoService],
 })
 export class Info implements OnInit {
   private infoService = inject(InfoService);
