@@ -65,7 +65,7 @@ export class InfoService {
   public updateNetworkElement(id: string, element: Partial<NetworkElement>) {
     return this.httpRequest<NetworkElement>(
       'PUT',
-      `http://localhost:3000/elements${id}`,
+      `http://localhost:3000/elements/${id}`,
       'Failed to update network element.',
       element
     ).pipe(
@@ -80,7 +80,7 @@ export class InfoService {
   public deleteNetworkElement(id: string) {
     return this.httpRequest(
       'DELETE',
-      `http://localhost:3000/elements${id}`,
+      `http://localhost:3000/elements/${id}`,
       'Failed to delete network element.'
     ).pipe(
       tap(() => {
