@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { AsyncPipe, DatePipe } from '@angular/common';
 import { DateTimeService } from '../../services/date-time.service';
 import { RouterLink } from '@angular/router';
@@ -9,6 +9,7 @@ import { RouterLink } from '@angular/router';
   imports: [DatePipe, AsyncPipe, RouterLink],
   templateUrl: './menu.html',
   styleUrl: './menu.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Menu {
   dateTimeService = inject(DateTimeService);

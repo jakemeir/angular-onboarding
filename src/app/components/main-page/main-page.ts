@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ElementCallbackDirective } from '../../directives/element-callback.directive';
 import { StyleAnimatorPipe } from '../../pipes/style-animator.pipe';
 
@@ -8,5 +8,6 @@ import { StyleAnimatorPipe } from '../../pipes/style-animator.pipe';
   imports: [ElementCallbackDirective, StyleAnimatorPipe],
   templateUrl: './main-page.html',
   styleUrl: './main-page.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MainPage {}

@@ -1,4 +1,4 @@
-import { Component, inject, output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, output } from '@angular/core';
 import { UserService } from '../../services/user.service';
 
 @Component({
@@ -7,6 +7,7 @@ import { UserService } from '../../services/user.service';
   imports: [],
   templateUrl: './header.html',
   styleUrl: './header.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Header {
   userService = inject(UserService);
