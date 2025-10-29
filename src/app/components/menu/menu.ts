@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { AsyncPipe, DatePipe } from '@angular/common';
-import { DateTimeService } from '../services/date-time.service';
+import { DateTimeService } from '../../services/date-time.service';
 import { RouterLink } from '@angular/router';
 
 @Component({

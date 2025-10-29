@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ElementCallbackDirective } from '../directives/element-callback.directive';
-import { StyleAnimatorPipe } from '../pipes/style-animator.pipe';
+import { ElementCallbackDirective } from '../../directives/element-callback.directive';
+import { StyleAnimatorPipe } from '../../pipes/style-animator.pipe';
 
 @Component({
   selector: 'app-main-page',
