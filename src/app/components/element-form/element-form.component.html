@@ -1,0 +1,43 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="form-field">
+    <label for="hostname">Hostname:</label>
+    <input id="hostname" formControlName="hostname" />
+  </div>
+  <div class="form-field">
+    <label for="ip_address">IP Address:</label>
+    <input id="ip_address" formControlName="ip_address" />
+  </div>
+  <div class="form-field">
+    <label for="mac_address">MAC Address:</label>
+    <input id="mac_address" formControlName="mac_address" />
+  </div>
+  <div class="form-field">
+    <label for="type">Type:</label>
+    <input id="type" formControlName="type" />
+  </div>
+  <div class="form-field">
+    <label for="manufacturer">Manufacturer:</label>
+    <input id="manufacturer" formControlName="manufacturer" />
+  </div>
+  <div class="form-field">
+    <label for="model">Model:</label>
+    <input id="model" formControlName="model" />
+  </div>
+  <div class="form-field">
+    <label for="status">Status:</label>
+    <input id="status" formControlName="status" />
+  </div>
+  <div class="form-field">
+    <label for="location">Location:</label>
+    <input id="location" formControlName="location" />
+  </div>
+  <div class="form-field">
+    <label for="last_seen">Last Seen:</label>
+    <input id="last_seen" formControlName="last_seen" type="datetime-local" />
+  </div>
+
+  <div class="form-actions">
+    <button type="submit" [disabled]="form.invalid">{{ element() ? 'Update' : 'Add' }}</button>
+    <button type="button" (click)="onCancel()">Cancel</button>
+  </div>
+</form>

@@ -1,9 +1,12 @@
+@if (errorService.error()) {
+<app-error-modal title="An error occurred" [message]="errorService.error()" />
+}
 <header app-header (toggle)="toggleMenu()" class="rounded-container"></header>
 <div class="main-layout">
-  @if (isMenu) {
+  @if (isMenu()) {
   <nav app-menu class="rounded-container"></nav>
   }
-  <main [class.menu-open]="isMenu" class="rounded-container">
+  <main [class.menu-open]="isMenu()" class="rounded-container">
     <router-outlet></router-outlet>
   </main>
 </div>
