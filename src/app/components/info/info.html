@@ -1,55 +1,53 @@
 <div class="container">
   @if (isFormVisible()) {
-    <app-element-form
-      [element]="selectedElement()"
-      (save)="onSave($event)"
-      (cancel)="onCancel()"
-    />
+  <app-element-form [element]="selectedElement()" (save)="onSave($event)" (cancel)="onCancel()" />
   } @else {
-    <div class="toolbar">
-      <h2>Network Elements</h2>
-      <button (click)="showAddForm()">Add New Element</button>
-    </div>
+  <div class="toolbar">
+    <h2>Network Elements</h2>
+    <button (click)="showAddForm()">Add New Element</button>
+  </div>
 
-    @if (networkElements().length > 0) {
-      <div class="table-responsive">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Type</th>
-              <th>Hostname</th>
-              <th>IP Address</th>
-              <th>Manufacturer</th>
-              <th>Model</th>
-              <th>Status</th>
-              <th>Location</th>
-              <th>Last Seen</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            @for (element of networkElements(); track element.id) {
-              <tr>
-                <td>{{ element.id }}</td>
-                <td>{{ element.type }}</td>
-                <td>{{ element.hostname }}</td>
-                <td>{{ element.ip_address }}</td>
-                <td>{{ element.manufacturer }}</td>
-                <td>{{ element.model }}</td>
-                <td>{{ element.status }}</td>
-                <td>{{ element.location }}</td>
-                <td>{{ element.last_seen | date : 'short' }}</td>
-                <td>
-                  <button (click)="showUpdateForm(element)">Edit</button>
-                </td>
-              </tr>
-            }
-          </tbody>
-        </table>
-      </div>
-    } @else {
-      <p class="loading-message">Loading network elements or no elements to display...</p>
-    }
-  }
+  @if (networkElements().length > 0) {
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Type</th>
+          <th>Hostname</th>
+          <th>IP Address</th>
+          <th>Manufacturer</th>
+          <th>Model</th>
+          <th>Status</th>
+          <th>Location</th>
+          <th>Last Seen</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (element of networkElements(); track element.id) {
+        <tr>
+          <td>{{ element.id }}</td>
+          <td>{{ element.type }}</td>
+          <td>{{ element.hostname }}</td>
+          <td>{{ element.ip_address }}</td>
+          <td>{{ element.manufacturer }}</td>
+          <td>{{ element.model }}</td>
+          <td>{{ element.status }}</td>
+          <td>{{ element.location }}</td>
+          <td>{{ element.last_seen | date : 'short' }}</td>
+          <td>
+            <div class="action-buttons">
+              <button (click)="showUpdateForm(element)">✏️</button>
+              <button (click)="deleteElement(element.id)">🗑️</button>
+            </div>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+  } @else {
+  <p class="loading-message">Loading network elements or no elements to display...</p>
+  } }
 </div>

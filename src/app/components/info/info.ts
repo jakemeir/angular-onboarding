@@ -42,6 +42,10 @@ export class Info implements OnInit {
     this.isFormVisible.set(true);
   }
 
+  deleteElement(id: string) {
+    this.infoService.deleteNetworkElement(id).pipe(takeUntilDestroyed(this.destroyRef)).subscribe();
+  }
+
   onCancel() {
     this.isFormVisible.set(false);
     this.selectedElement.set(null);
