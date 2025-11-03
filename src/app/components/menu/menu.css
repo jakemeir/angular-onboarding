@@ -46,6 +46,11 @@ a:hover {
   background-color: #e2e6ea;
 }
 
+a.active {
+  background-color: #cce5ff;
+  color: #0056b3;
+}
+
 a .icon {
   margin-right: 8px;
 }
