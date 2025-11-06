@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject, output } from '@angular/core';
-import { UserService } from '../../services/user.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'header[app-header]',
@@ -10,10 +10,14 @@ import { UserService } from '../../services/user.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Header {
-  userService = inject(UserService);
+  public authService = inject(AuthService);
   toggle = output<void>();
 
   toggleMenu() {
     this.toggle.emit();
+  }
+
+  logout() {
+    this.authService.signOut();
   }
 }
