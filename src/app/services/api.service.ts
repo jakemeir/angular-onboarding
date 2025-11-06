@@ -31,8 +31,8 @@ export class ApiService {
       })
       .pipe(
         catchError((error) => {
-          this.errorService.showError(errorMessage);
-          return throwError(() => new Error(errorMessage));
+          this.errorService.showError(error.error.message || errorMessage);
+          return throwError(() => new Error(error.error.message || errorMessage));
         })
       );
   }

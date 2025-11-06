@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component, inject, output } from '@angular/core';
-import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'header[app-header]',
@@ -10,7 +9,6 @@ import { UserService } from '../../services/user.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Header {
-  userService = inject(UserService);
   toggle = output<void>();
 
   toggleMenu() {

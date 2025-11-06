@@ -1,6 +1,7 @@
-import { computed, inject, Injectable, signal } from '@angular/core';
-import { tap } from 'rxjs';
+import { inject, Injectable, signal } from '@angular/core';
+import { debounceTime, first, map, of, switchMap, tap, timer } from 'rxjs';
 import { ApiService } from './api.service';
+import { AbstractControl, AsyncValidatorFn } from '@angular/forms';
 
 export interface User {
   id: string;
@@ -42,5 +43,25 @@ export class AuthService {
   public signOut() {
     localStorage.removeItem('token');
     this.token.set(null);
+  }
+
+  public usernameAvailableValidator(): AsyncValidatorFn {
+    return (control: AbstractControl) => {
+      if (!control.value) {
+        return of(null);
+      }
+
+      return control.valueChanges.pipe(
+        debounceTime(500),
+        switchMap(() =>
+          this.apiService.get<{ available: boolean }>(
+            `http://localhost:3000/check-username?username=${encodeURIComponent(control.value)}`,
+            'Failed to check username availability.'
+          )
+        ),
+        map((res) => (res.available ? null : { duplicate: true })),
+        first()
+      );
+    };
   }
 }
