@@ -32,3 +32,17 @@
 .username {
   font-size: 20px;
 }
+
+.logout-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.logout-button:hover {
+  background-color: #c82333;
+}

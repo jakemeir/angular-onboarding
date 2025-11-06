@@ -2,6 +2,7 @@ import { inject, Injectable, signal } from '@angular/core';
 import { debounceTime, first, map, of, switchMap, tap, timer } from 'rxjs';
 import { ApiService } from './api.service';
 import { AbstractControl, AsyncValidatorFn } from '@angular/forms';
+import { Router } from '@angular/router';
 
 export interface User {
   id: string;
@@ -16,7 +17,8 @@ export interface AuthResponse {
 @Injectable({ providedIn: 'root' })
 export class AuthService {
   private apiService = inject(ApiService);
-  private token = signal<string | null>(localStorage.getItem('token') || null);
+  public token = signal<string | null>(localStorage.getItem('token') || null);
+  private router = inject(Router);
 
   public singUp(user: Partial<User>) {
     return this.apiService
@@ -43,6 +45,7 @@ export class AuthService {
   public signOut() {
     localStorage.removeItem('token');
     this.token.set(null);
+    this.router.navigate(['/auth']);
   }
 
   public usernameAvailableValidator(): AsyncValidatorFn {
